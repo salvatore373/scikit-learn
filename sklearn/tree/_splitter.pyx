@@ -357,8 +357,9 @@ cdef inline int node_split_best(
         #   and aren't constant.
 
         # Draw a feature at random
-        f_j = rand_int(n_drawn_constants, f_i - n_found_constants,
-                       random_state)
+        # f_j = rand_int(n_drawn_constants, f_i - n_found_constants,
+        #                random_state)
+        f_j = n_drawn_constants  # Start from the first columns of the dataframe
 
         if f_j < n_known_constants:
             # f_j in the interval [n_drawn_constants, n_known_constants[
